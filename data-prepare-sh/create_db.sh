@@ -5,6 +5,7 @@ indb=hk_collisions_valid_sf.gpkg
 outdir=public/db
 mkdir -p $outdir
 
+sqlite3 $indb < data-prepare-sh/build-index.sql
 # for chunked mode, we need to know the database size in bytes beforehand
 bytes="$(stat --printf="%s" "$indb")"
 # set chunk size to 10MiB (needs to be a multiple of the `pragma page_size`!)
