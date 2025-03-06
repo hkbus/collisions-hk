@@ -22,3 +22,7 @@ CREATE INDEX "idx_road_surface" ON "hk_collisions_valid_sf" ("road_surface" ASC)
 CREATE INDEX "idx_year_month" ON "hk_collisions_valid_sf" ("year_month" ASC);
 CREATE INDEX "idx_vehicle_class_involved" ON "hk_collisions_valid_sf" ("vehicle_class_involved" ASC);
 CREATE INDEX "idx_DC_full_name" ON "hk_collisions_valid_sf" ("DC_full_name" ASC);
+
+pragma page_size = 524288;
+
+vacuum;
